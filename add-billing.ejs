@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Billing</title>
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl5RFBWd70u8xNBu3mBTfHBq-Y1TzCuXJ5w&s" class="img-fluid mb-3" alt="Placeholder image" width="150" height="125">
+    <h1>Add Billing</h1>
+    <form action="/add-billing" method="POST">
+      <div class="form-group">
+        <label for="ref_num">Reference Number</label>
+        <input type="text" id="ref_num" name="ref_num" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="bill_title">Billing Title</label>
+        <input type="text" id="bill_title" name="bill_title" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="descriptions">Descriptions</label>
+        <input type="text" id="descriptions" name="descriptions" required autocomplete="off"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="install_difficulty">Installation Difficulty</label>
+        <input type="text" id="install_difficulty" name="install_difficulty" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="factor">Factor</label>
+        <input type="text" id="factor" name="factor" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="sla_mla">SLA/MLA</label>
+        <input type="text" id="sla_mla" name="sla_mla" required autocomplete="off"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="maintain_visit">Maintenance Visits</label>
+        <input type="text" id="maintain_visit" name="maintain_visit" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="validate_num_days">Validation Days</label>
+        <input type="text" id="validate_num_days" name="validate_num_days" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="stock_code">Stock Code</label>
+        <input type="text" id="stock_code" name="stock_code" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="stock_qty">Stock Quantity</label>
+        <input type="text" id="stock_qty" name="stock_qty" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="unit_cost">Unit Cost</label>
+        <input type="text" id="unit_cost" name="unit_cost" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="product_type">Product Type</label>
+        <input type="text" id="product_type" name="product_type" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="equip_margin">Equipment Margin</label>
+        <input type="text" id="equip_margin" name="equip_margin" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="labour_margin">Labour Margin</label>
+        <input type="text" id="labour_margin" name="labour_margin" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="labour_hrs">Labour Hours</label>
+        <input type="text" id="labour_hrs" name="labour_hrs" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="maintenance_hrs">Maintenance Hours</label>
+        <input type="text" id="maintenance_hrs" name="maintenance_hrs" required autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="supplier">Supplier</label>
+        <input type="text" id="supplier" name="supplier" required autocomplete="off">
+      </div>
+
+      <button type="submit">Submit Billing</button>
+    </form>
+  </div>
+</body>
+</html>
