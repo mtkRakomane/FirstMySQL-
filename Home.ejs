@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <div class="image">
+        <h1>  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl5RFBWd70u8xNBu3mBTfHBq-Y1TzCuXJ5w&s" class="img-fluid mb-3" alt="Placeholder image" width="150" height="125">
+  Welcome, <%= user.saleName %></h1>
+</div>
+  <div class="user-details">
+    <h2>Quote Details</h2>
+    <ul>
+      <li><strong>Reference Number:</strong> <%= user.ref_num %></li>
+      <li><strong>Email:</strong> <%= user.email %></li>
+      <li><strong>Cell:</strong> <%= user.cell %></li>
+      <li><strong>Role:</strong> <%= user.role %></li>
+      <li><strong>Customer Name:</strong> <%= user.customer_name %></li>
+      <li><strong>Customer Call Person:</strong> <%= user.customer_call_person %></li>
+      <li><strong>Customer Email:</strong> <%= user.customer_email %></li>
+    </ul>
+  </div>
+
+  <div class="billing-details">
+    <h2>Billing Information</h2>
+    <% if (billings.length > 0) { %>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Bill Title</th>
+            <th>Description</th>
+            <th>Install Difficulty</th>
+            <th>Factor</th>
+            <th>SLA/MLA</th>
+            <th>Maintenance Visit</th>
+            <th>Validation Days</th>
+            <th>Stock Code</th>
+            <th>Stock Qty</th>
+            <th>Unit Cost</th>
+            <th>Product Type</th>
+            <th>Equip Margin</th>
+            <th>Labour Margin</th>
+            <th>Labour Hours</th>
+            <th>Maintenance Hours</th>
+            <th>Supplier</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% billings.forEach(billing => { %>
+              <tr>
+                <td><%= billing.bill_title %></td>
+                <td><%= billing.descriptions %></td>
+                <td><%= billing.install_difficulty %></td>
+                <td><%= billing.factor %></td>
+                <td><%= billing.sla_mla %></td>
+                <td><%= billing.maintain_visit %></td>
+                <td><%= billing.validate_num_days %></td>
+                <td><%= billing.stock_code %></td>
+                <td><%= billing.stock_qty %></td>
+                <td><%= billing.unit_cost %></td>
+                <td><%= billing.product_type %></td>
+                <td><%= billing.equip_margin %></td>
+                <td><%= billing.labour_margin %></td>
+                <td><%= billing.labour_hrs %></td>
+                <td><%= billing.maintenance_hrs %></td>
+                <td><%= billing.supplier %></td>
+                <td>
+                  <form action="/delete-billing" method="POST" onsubmit="return confirm('Are you sure you want to delete this billing entry?');">
+                    <input type="hidden" name="billing_id" value="<%= billing.id %>">
+                    <button type="submit">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>          
+      </table>
+    <% } else { %>
+      <p>No billing data available.</p>
+    <% } %>
+  </div>
+
+  <div class="button-container">
+    <a href="/add-billing" onclick="return confirm('Are you sure you want to add a new billing item?');">Add Billing</a>
+  </div>
+</body>
+</html>
