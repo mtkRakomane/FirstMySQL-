@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Quote</title>
+    <link rel ="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 id="quote">Quote Register</h1>
+    
+        <form action="/signup" method="post">
+            <div class ="row">
+                <div class="col-md-6">
+                    <div class="card-sidebar">
+                        <div class="card-body">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl5RFBWd70u8xNBu3mBTfHBq-Y1TzCuXJ5w&s" class="img-fluid mb-3" alt="Placeholder image" width="150" height="125">
+                            <h2>***Sale's Person Details***</h2>
+
+                            <div class= "form-group">
+                                <label for ="ref_num">Reference Number: </label>
+                                <input type="text" name="ref_num" id="ref_num" placeholder="Refference Number" required autocomplete="off"> </input>
+                                </div>
+
+                        <div class="form-group">
+                            <label for="saleName">Sale Persons:</label>
+                            <select id="saleName" name="saleName" required>
+                                <option value="" disabled selected>Select a Sale Person</option>
+                                <% salePeoples.forEach(type => { %>
+                                    <option value="<%= type.saleName %>"><%= type.saleName %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Sale Email Address:</label>
+                           <input type="text" name="email" id="email" placeholder="Sale Email Address" required autocomplete="off"></input>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cell">Sale Person Contact Number:</label>
+                           <input type="text" name="cell" id="cell" placeholder="Sale Person Contact Number" required autocomplete="off"></input>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">Sale Person Role:</label>
+                            <input type="text" name="role" id="role" placeholder="Sale Person Role" required autocomplete="off"></input>
+                        </div>
+
+                        <h3>***Customer's Details***</h3>
+
+                                    <div class= "form-group">
+                                        <label for ="customer_name">Customer Name:  </label>
+                                        <input type="text" name="customer_name" id="customer_name" placeholder="Customer Name" required autocomplete="off"> </input>
+                                        </div>
+
+                                        <div class= "form-group">
+                                            <label for ="customer_call_person">Customer Contact Person: </label>
+                                            <input type="tel" name="customer_call_person" id="customer_call_person" placeholder="Customer Contact Person" pattern="[0-9]{10}"  autocomplete="off"> </input>
+                                            <small>Enter a 10-digit phone number (numbers only).</small>
+                                            </div>
+
+                                            <div class= "form-group">
+                                                <label for ="customer_email">Customer Email Address: </label>
+                                                <input type="email" name="customer_email" id="customer_email" placeholder="Customer Email Address" required autocomplete="off"> </input>
+                                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <hr>                  
+            <br>
+          
+
+                <button type="submit" class="submit-btn">signup</button>
+                
+                </form>
+                </div>
+                <script src="/js/over.js"></script>
+</body>
+</html>
