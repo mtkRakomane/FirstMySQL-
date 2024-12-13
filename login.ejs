@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   
+    <link rel="stylesheet" href="/style.css">
+   
+</head>
+<body>
+    <div class="form-container">
+        <div class="card-middle">
+            <div class="card-body">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl5RFBWd70u8xNBu3mBTfHBq-Y1TzCuXJ5w&s" class="img-fluid mb-3" alt="Placeholder image" width="150" height="125">
+                <h1 id="quote">Login Quote</h1>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="ref_num">Reference Number: </label>
+                        <input type="text" name="ref_num" id="ref_num" placeholder="Reference Number" required autocomplete="off"> 
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="saleName">Sale Persons:</label>
+                        <select id="saleName" name="saleName" required>
+                            <option value="" disabled selected>Select a Sale Person</option>
+                            <% salePeoples.forEach(type => { %>
+                                <option value="<%= type.saleName %>"><%= type.saleName %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+       
+                    <button type="submit" class="submit-btn">Login</button>
+                    <p> Register new Quote! <a href="/signup" style="color: blue;">Register</a></p> 
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
